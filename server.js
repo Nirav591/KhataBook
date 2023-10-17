@@ -56,14 +56,13 @@ app.use('/users', verifyToken, userRoute);
 app.use('/you-gave', verifyToken, gaveTransactionRoute);
 app.use('/you-got', verifyToken, gotTransactionRoute);
 
-
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Internal Server Error' });
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 6000;
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
